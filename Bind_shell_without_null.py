@@ -119,7 +119,7 @@ CODE2 = '''
         mov ax, 0202h;
         push eax                       ; #wVersionRequested
         call dword ptr [ebp+18h]       ; #call WSAStartup
-	    add sp, 304h		           ; #Move esp over WSAData
+	add sp, 304h		       ; #Move esp over WSAData
     
     create_socket:
         xor eax, eax;
