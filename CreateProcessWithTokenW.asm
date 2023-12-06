@@ -109,7 +109,7 @@ OPTION casemap:none
     OpenProcess:
         push 4892                      ; PID
         push 1h                        ;
-        push 1f07ffh                   ; PROCESS_QUERY_INFORMATION == 400h  PROCESS_ALL_ACCESS == 1f07ffh
+        push 400h                      ; PROCESS_QUERY_INFORMATION == 400h  PROCESS_ALL_ACCESS == 1f07ffh
         call dword ptr [ebp+18h]       ; call OpenProcess func
 
     Open_process_token:
